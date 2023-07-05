@@ -1,99 +1,91 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&family=Ubuntu:wght@300;400;500;700&family=Ysabeau+Infant:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Nunito+Sans:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&family=Ubuntu:wght@300;400;500;700&family=Ysabeau+Infant:wght@300;400;500;600;700&display=swap");
-
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 body {
-  font-size: 20px;
-  background: #99627a;
   font-family: "Ysabeau Infant", sans-serif;
+  height: 100vh;
 }
 .header {
-  color: white;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px 25px 20px 20px;
+  background-image: url(https://images.pexels.com/photos/3454270/pexels-photo-3454270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
+  background-position: left;
+  padding: 24px;
 }
 .header .title {
+  text-align: center;
   font-size: 80px;
   font-weight: 700;
   letter-spacing: 10px;
+  text-shadow: 4px 2px black;
 }
 .header .subtitle {
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 20px;
-}
-.words {
-  height: 100vh;
-  margin: 20px;
-  padding: 5px;
+  text-shadow: 2px 1px black;
 }
 .record {
-  width: 60px;
-  height: 60px;
-  transform: rotate(-0.05turn);
-  margin: auto;
-  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
   padding: 40px;
-  animation-name: changeBackgroundColor;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
 }
 .record > button {
-  transform: rotate(0.05turn) translateY(17px) translateX(-15px);
+  background: #FFF4F4;
   padding: 5px 25px 5px 25px;
   border-radius: 10px;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
-  border: none;
+  border: 2px solid #000000;
   cursor: pointer;
-  box-shadow: 3px 6px;
 }
 .record > button:active {
-  border: 1px solid #fff;
   scale: 0.9;
 }
 .notebook {
-  background: #fff;
+  background-image: url("https://images.pexels.com/photos/316466/pexels-photo-316466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
   display: flex;
   justify-content: center;
   border-radius: 10px;
-  margin: 30px 10px 30px 10px;
+}
+.list-title{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
 }
 .notebook > ul {
   font-family: "Caveat", cursive;
-  padding: 20px;
   list-style: decimal;
   font-size: 30px;
+  margin-bottom: 5rem;
 }
-.notebook > ul > li button{
-    padding: 3px 10px 3px 10px;
-    font-family: "Ysabeau Infant", sans-serif;
-    border: none;
-    margin-left: 14px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    font-size: medium;
-    font-weight: 400;
-    color: #fff;
-    background: #99627a;
-    border-radius: 10px;
+.notebook > ul > li {
+  margin-top: 2.1rem;
+  text-transform: capitalize;
+}
+.notebook > ul > li button {
+  padding: 3px 10px 3px 10px;
+  font-family: "Ysabeau Infant", sans-serif;
+  border: none;
+  margin-left: 14px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 400;
+  color: #fff;
+  background: #475f67;
+  border-radius: 10px;
 }
 
-@keyframes changeBackgroundColor {
-  0% {
-    background: #643843;
-  }
-  25% {
-    background: #c88ea7;
-  }
-
-  50% {
-    background: #643843;
-  }
-  100% {
-    background: #c88ea7;
-  }
-}
