@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(https://images.pexels.com/photos/3454270/pexels-photo-3454270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-image: url("https://images.pexels.com/photos/3454270/pexels-photo-3454270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-size: cover;
   background-position: left;
   padding: 24px;
@@ -40,7 +40,7 @@ body {
   padding: 40px;
 }
 .record > button {
-  background: #FFF4F4;
+  background: #fff4f4;
   padding: 5px 25px 5px 25px;
   border-radius: 10px;
   font-size: 16px;
@@ -57,13 +57,12 @@ body {
   background-size: cover;
   display: flex;
   justify-content: center;
-  border-radius: 10px;
 }
-.list-title{
+.list-title {
   display: flex;
   justify-content: center;
-  gap: 12px;
   margin-top: 40px;
+  text-decoration: underline;
 }
 .notebook > ul {
   font-family: "Caveat", cursive;
@@ -88,4 +87,21 @@ body {
   background: #475f67;
   border-radius: 10px;
 }
-
+.footer {
+  background-image: url("https://images.pexels.com/photos/3454270/pexels-photo-3454270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: top;
+  height: 100px;
+  opacity: 0.9;
+  position: relative;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-text{
+  position: absolute;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-align: center;
+}
