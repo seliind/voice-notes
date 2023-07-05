@@ -20,24 +20,30 @@
           Record <i class="fa-solid fa-microphone"></i>
         </button>
       </div>
+      <div class="voice-note">
+        <label for="note">Voice Note:</label>
+        <textarea
+          id="note"
+          rows="4"
+          cols="50"
+          placeholder="Push the record button and speak after 1 second then your words will be written here!"
+        ></textarea>
+        <button onclick="addNote()">
+          Add <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
     </div>
 
     <div class="notebook">
       <ul class="todos">
-      <div class="list-title">
-        <h2>My Notes</h2>
-      </div>
-        <li>
-          Lorem ipsum dolor sit.
-          <button><i class="fa-solid fa-check"></i></button>
-        </li>
+        <div class="list-title">
+          <h4><i class="fa-solid fa-list-ol"></i>&nbsp;&nbsp;My Notes</h4>
+        </div>
       </ul>
     </div>
 
     <div class="footer">
-      <div class="footer-text">
-        "There’s nothing more treasured than knowledge."
-      </div>
+      <div class="footer-text">"where inspiration meets organization"</div>
     </div>
   </body>
 </html>
