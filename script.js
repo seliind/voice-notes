@@ -22,11 +22,9 @@ function record() {
 }
 
 function addNote() {
-  const storedArray = localStorage.getItem("todoList");
-  const parseTodoList = JSON.parse(storedArray);
-  parseTodoList.push(voiceNote.value);
-  const updatedTodoList = JSON.stringify(parseTodoList);
-  localStorage.setItem("todoList", updatedTodoList);
+  todoList.push(voiceNote.value);
+  const updatedTodoListString = JSON.stringify(todoList);
+  localStorage.setItem("todoList", updatedTodoListString);
   todos.innerHTML += `
      <li>
      ${voiceNote.value}
@@ -37,7 +35,7 @@ function addNote() {
   window.alert("New note is adding!");
 }
 
-todos.innerHTML = JSON.parse(storedtodoListString)
+todos.innerHTML = todoList
   .map(
     (item) =>
       `  <li>
