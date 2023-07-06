@@ -3,7 +3,7 @@ const recordContainer = document.querySelector(".record");
 const todos = document.querySelector(".todos");
 const voiceNote = document.querySelector("#note");
 
-const storedtodoListString = localStorage.getItem('todoList')
+const storedtodoListString = localStorage.getItem("todoList");
 const todoList = storedtodoListString ? JSON.parse(storedtodoListString) : [];
 console.log(todoList);
 
@@ -23,7 +23,7 @@ function record() {
 
 function addNote() {
   const storedArray = localStorage.getItem("todoList");
-  const parseTodoList = JSON.parse(storedArray)
+  const parseTodoList = JSON.parse(storedArray);
   parseTodoList.push(voiceNote.value);
   const updatedTodoList = JSON.stringify(parseTodoList);
   localStorage.setItem("todoList", updatedTodoList);
@@ -37,10 +37,12 @@ function addNote() {
   window.alert("New note is adding!");
 }
 
-todos.innerHTML = 
-JSON.parse(storedtodoListString).map((item) => (
-`  <li>
+todos.innerHTML = JSON.parse(storedtodoListString)
+  .map(
+    (item) =>
+      `  <li>
   ${item}
   <button><i class="fa-solid fa-check"></i></button>
   </li>`
-)).join('')
+  )
+  .join("");
