@@ -5,8 +5,6 @@ const voiceNote = document.querySelector("#note");
 
 const storedtodoListString = localStorage.getItem("todoList");
 const todoList = storedtodoListString ? JSON.parse(storedtodoListString) : [];
-console.log(todoList);
-
 function record() {
   recordButton.innerText = "recording...";
   var recognition = new webkitSpeechRecognition();
@@ -25,22 +23,38 @@ function addNote() {
   todoList.push(voiceNote.value);
   const updatedTodoListString = JSON.stringify(todoList);
   localStorage.setItem("todoList", updatedTodoListString);
-  todos.innerHTML += `
-     <li>
-     ${voiceNote.value}
-     <button><i class="fa-solid fa-check"></i></button>
-     </li>
-      `;
+  renderList();
   voiceNote.value = "";
   window.alert("New note is adding!");
 }
 
-todos.innerHTML = todoList
-  .map(
-    (item) =>
-      `  <li>
-  ${item}
-  <button><i class="fa-solid fa-check"></i></button>
-  </li>`
-  )
-  .join("");
+function deleteNote(index) {
+  console.log(index);
+  const alltodos = localStorage.getItem("todoList");
+  const storedAlltodos = JSON.parse(alltodos);
+  storedAlltodos.splice(index, 1);
+  const newTodoList = JSON.stringify(storedAlltodos);
+  localStorage.setItem("todoList", newTodoList);
+  const todoItems = document.querySelectorAll(".todo-item");
+  if (todoItems.length > index) {
+    todoItems[index].remove();
+  }
+}
+
+function renderList() {
+  todos.innerHTML = todoList
+    .map(
+      (item, i) =>
+        `  
+        <li key=${i} class="todo-item">
+            ${item}
+            <button onclick="deleteNote(${i})">
+            <i class="fa-solid fa-check"></i>
+            </button>
+        </li>
+        `
+    )
+    .join("");
+}
+
+renderList();
